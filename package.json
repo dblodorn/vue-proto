@@ -8,6 +8,8 @@
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "dependencies": {
+    "chibijs": "^3.0.8",
+    "jquery": "^3.1.0",
     "simplestatemanager": "^3.1.3",
     "smooth-scroll": "cferdinandi/smooth-scroll",
     "vue": "^1.0.0",
