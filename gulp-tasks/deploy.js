@@ -1,12 +1,15 @@
 module.exports = function ( gulp, ftp ) {
+  
   return function () {
-    
-    var user = '',
-        password = '',
-        host = '',
+
+    var credenitals = require('../deploy-credentials.json')
+
+    var user = credenitals.user,
+        password = credenitals.password,
+        host = credenitals.host,
         port = 21,
-        localFilesGlob = ['./www/**/*','./www/.htaccess'],
-        remoteFolder = '';
+        localFilesGlob = ['./public/index.html','./public/.htaccess','./public/js/**','./public/imgs/**/*'],
+        remoteFolder = credenitals.remoteFolder;
 
     function getFtpConnection() {
       return ftp.create({
@@ -20,7 +23,7 @@ module.exports = function ( gulp, ftp ) {
 
     var conn = getFtpConnection();
 
-    gulp.src(localFilesGlob, { base: './www', buffer: false })
+    gulp.src(localFilesGlob, { base: './public', buffer: false })
         .pipe( conn.newer( remoteFolder ) )
         .pipe( conn.dest( remoteFolder ) );
   };
