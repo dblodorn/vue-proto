@@ -55,6 +55,9 @@ module.exports = {
       }
     ]
   },
+  externals: {
+    "jquery": "$"
+  },
   devtool: '#source-map',
   plugins: [
     new webpack.DefinePlugin({ 'PROD_ENV': true }),
