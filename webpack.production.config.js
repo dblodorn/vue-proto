@@ -1,5 +1,8 @@
-var path = require('path')
-var webpack = require('webpack')
+/*eslint-env node */
+
+const path = require('path')
+const WebpackShellPlugin = require('webpack-shell-plugin')
+const webpack = require('webpack')
 const PATHS = {
   app: path.join(__dirname, './public/_js/')
 }
@@ -10,7 +13,7 @@ module.exports = {
   },
   output: {
     path: __dirname,
-    filename: './public/js/[name].js'
+    filename: './[name].js'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
@@ -52,25 +55,26 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  devtool: '#eval-source-map'
-}
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
+  devtool: '#source-map',
+  plugins: [
+    new webpack.DefinePlugin({ 'PROD_ENV': true }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
+      compressor: {
         warnings: false
+      },
+      output: {
+        comments: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
-  ])
+    new webpack.NoErrorsPlugin(),
+    new WebpackShellPlugin({
+      onBuildStart:['echo "Webpack Start"'],
+      onBuildEnd:[
+        'npm run ftp'
+      ]
+    })
+  ],
+  stats: { colors: true }
 }

@@ -12,6 +12,9 @@ npm install
 npm run dev
 
 # build for production with minification
+npm run build
+
+# build for production with minification & deploy via ftp
 npm run prod
 ```
 
