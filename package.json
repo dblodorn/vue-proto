@@ -1,13 +1,14 @@
 {
-  "name": "fogdog-comp",
+  "name": "vue-proto",
   "description": "A Vue.js project",
   "author": "Dain Blodorn <dain@db13.us>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --content-base public/ --inline --hot",
-    "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.js"
   },
   "dependencies": {
+    "async-series": "0.0.1",
     "chibijs": "^3.0.8",
     "jquery": "^3.1.0",
     "simplestatemanager": "^3.1.3",

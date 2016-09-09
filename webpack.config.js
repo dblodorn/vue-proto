@@ -1,8 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
+const PATHS = {
+  app: path.join(__dirname, './public/_js/')
+}
 
 module.exports = {
-  entry: './public/_src/index.js',
+  entry: {
+    app: ['./public/_src/index.js']
+  },
   output: {
     path: path.resolve(__dirname, './js'),
     publicPath: '/js/',

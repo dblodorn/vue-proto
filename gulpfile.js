@@ -2,7 +2,6 @@
 
 /* Plugins */
 var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
     ftp         = require('vinyl-ftp');
 
 /* Task Library */
