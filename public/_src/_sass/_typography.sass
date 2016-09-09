@@ -1,0 +1,38 @@
+//-------------------------------------------------------------------
+//  TYPE STYLING
+//-------------------------------------------------------------------
+
+h1,h2,h3,h4,h5
+  font-family: $display
+  font-weight: 500
+  line-height: 1.35
+  color: $type-color
+
+h1
+  font-size: 8rem
+
+h2
+  font-size: 4.5rem
+
+h3
+  font-size: 3.5rem
+
+h4
+  font-size: 2.5rem
+
+h5
+  font-size: 2rem
+
+p
+  font-family: $text
+  font-weight: 300
+  font-size: 1.65rem
+  line-height: 1.35
+  color: $type-color
+
+a
+  @extend %smooth
+  color: $type-color
+  text-decoration: underline
+  &:hover
+    color: $type-color

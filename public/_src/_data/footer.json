@@ -1,0 +1,15 @@
+{
+  "address": "1234 Normal St. Los Angeles, CA. 90081",
+  "footer_items": [
+    {
+      "title": "nav1",
+      "link": "/"
+    },{
+      "title": "nav2",
+      "link": "/"
+    },{
+      "title": "nav3",
+      "link": "/"
+    }
+  ]
+}

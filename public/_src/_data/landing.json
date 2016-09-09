@@ -1,0 +1,7 @@
+{
+  "header_one": "Landing",
+  "bgimg": "https://s3-us-west-1.amazonaws.com/db13/core-images/bg-swirl.jpg",
+  "preload_images": [
+    "https://s3-us-west-1.amazonaws.com/db13/core-images/bg-swirl.jpg"
+  ]
+}

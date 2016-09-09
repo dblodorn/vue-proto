@@ -1,0 +1,14 @@
+{
+  "nav_items": [
+    {
+      "title": "nav1",
+      "link": "/"
+    },{
+      "title": "nav2",
+      "link": "/"
+    },{
+      "title": "nav3",
+      "link": "/"
+    }
+  ]
+}
