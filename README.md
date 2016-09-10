@@ -11,17 +11,15 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# build for production with minification  & deploy via ftp
 npm run build
-
-# build for production with minification & deploy via ftp
-npm run prod
 ```
 
-## Utilities you can run from the command line:
+## More stuff to help you:
 ``` bash
 
-# using vinyl ftp through gulp you can do an easy deploy by creating a file called deploy-credentials.json in the root directory, this file should have the following info, don't forget to gitignore!
+# using vinyl ftp through gulp you can do an easy deploy by creating a file called deploy-credentials.json in the root directory.
+# this file should have the following info:
 
 {
   "user": "username",
@@ -29,4 +27,6 @@ npm run prod
   "host": "your.host",
   "remoteFolder": "/uploadfolder/"
 }
+
+# Don't forget to make sure deploy-credentials.json in included in .gitignore!
 ```
