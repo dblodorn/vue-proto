@@ -33,8 +33,8 @@
   header
     @extend %box-shadow
     @extend %aligner
-    width: 100vw
-    position: fixed
+    width: 100%
+    position: absolute
     height: $header-height
     top: 0
     left: 0
@@ -44,7 +44,7 @@
     
     .logo
       margin-right: auto
-      height: 4rem
+      height: 2rem
       img
         height: 100%
         width: auto

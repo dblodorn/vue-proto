@@ -1,5 +1,6 @@
 {
   "address": "1234 Normal St. Los Angeles, CA. 90081",
+  "logo": "imgs/fpo/logo.svg",
   "footer_items": [
     {
       "title": "nav1",

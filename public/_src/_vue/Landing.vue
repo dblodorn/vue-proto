@@ -36,6 +36,6 @@
   section#landing
     @extend %full-bg
     padding-top: $header-height + 4rem
-    height: calc(100vh - #{$footer-height})
+    height: 200vh
 
 </style>

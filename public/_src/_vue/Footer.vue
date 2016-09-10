@@ -1,5 +1,8 @@
 <template lang="jade">
   footer
+    .upper-footer
+      .logo
+        img(v-bind:src="footer_data.logo")
     .inner-footer
       address {{ footer_data.address }}
 </template>
@@ -29,13 +32,33 @@
 
   // FOOTER
 
+  $footer-content-height: 10rem
+
   footer
-    @extend %aligner
-    background-color: $grey
-    height: $footer-height
+    @extend %box-shadow
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    position: fixed
+    bottom: -$footer-content-height
+    left: 0
+    width: 100%
+    background-color: $green
+    height: $footer-height + $footer-content-height
     padding: 0 $base-padding
+    z-index: $footer-z
+
+  .upper-footer
+    @extend %aligner
+    height: $footer-height
+    .logo
+      height: 2rem
+      img
+        height: 100%
+        width: auto
 
   .inner-footer
-    margin-right: auto
+    @extend %aligner
+    height: $footer-content-height
      
 </style>

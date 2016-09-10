@@ -1,8 +1,9 @@
 <template lang="jade">
-  header-component
-  main
-    router-view
-  footer-component
+  #site
+    header-component
+    main
+      router-view
+    footer-component
 </template>
 
 <script></script>
@@ -10,9 +11,41 @@
 <style lang="sass?indentedSyntax">
 
   @import "../_sass/utilities/_utilities.sass"
-   
+  
+  #wrapper
+    display: block
+    position: relative
+    width: 100%
+    height: 100%
+    top: 0px
+    left: 0px
+    overflow: hidden
+    padding: 0px
+    margin: 0px
+
+  #site
+    height: 0
+
   main
-    width: 100vw
-    min-height: calc(100vh - #{$footer-height})
+    position: absolute
+    width: 100%
+    top: 0%
+    bottom: 0px
+    display: block
+    background-color: #e1e2e2
+    margin-top: $header-height
+    margin-bottom: $footer-height
+    overflow: auto
+    z-index: 15
+
+  // KILL SCROLL
+  ::-webkit-scrollbar
+      display: none
+  ::-webkit-scrollbar-track
+      display: none
+  ::-webkit-scrollbar-thumb
+      display: none
+  ::-webkit-scrollbar-thumb:window-inactive
+      display: none
 
 </style>
