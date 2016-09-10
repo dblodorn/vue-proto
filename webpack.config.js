@@ -1,16 +1,18 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const WebpackShellPlugin = require('webpack-shell-plugin')
+const webpack = require('webpack')
 const PATHS = {
   app: path.join(__dirname, './public/_js/')
 }
 
 module.exports = {
   entry: {
-    app: ['./public/_src/index.js']
+    app: ['./public/_src/index.js'],
+    vendor: ["jquery", "hammerjs"]
   },
   output: {
     path: path.resolve(__dirname, './js'),
-    publicPath: '/js/',
+    publicPath: 'js',
     filename: 'app.js'
   },
   resolveLoader: {
@@ -53,9 +55,9 @@ module.exports = {
       }
     ]
   },
-  externals: {
-    "jquery": "$"
-  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+  ],
   devServer: {
     historyApiFallback: true,
     noInfo: true
@@ -63,6 +65,10 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 if (process.env.NODE_ENV === 'production') {
+  module.exports.output = {
+    path: path.resolve(__dirname, './public/js'),
+    filename: './[name].js'
+  }
   module.exports.devtool = '#source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -70,11 +76,23 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
+      compressor: {
         warnings: false
+      },
+      output: {
+        comments: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.NoErrorsPlugin(),
+    new WebpackShellPlugin({
+      onBuildStart:['echo "Webpack Run"'],
+      onBuildEnd:[
+        'npm run ftp'
+      ]
+    })
   ])
 }

@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base public/ --inline --hot",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
-    "ftp": "gulp ftp",
-    "prod": "gulp prod"
+    "ftp": "gulp ftp"
   },
   "dependencies": {
     "async-series": "0.0.1",
