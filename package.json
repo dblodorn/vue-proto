@@ -18,7 +18,8 @@
     "smooth-scroll": "cferdinandi/smooth-scroll",
     "vue": "^1.0.0",
     "vue-resource": "^0.9.3",
-    "vue-router": "^0.7.13"
+    "vue-router": "^0.7.13",
+    "vue-touch": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",

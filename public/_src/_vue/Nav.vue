@@ -1,7 +1,7 @@
 <template lang="jade">
   button.open-nav(v-on:click="navdrawer")
     h5 MENU
-  nav
+  nav(v-touch:swiperight="onSwipeRight")
     button.close-nav(v-on:click="navdrawer")
       img(v-bind:src="'imgs/ui/close-btn.svg'")
     ul
@@ -26,6 +26,9 @@
     },
     methods: {
       navdrawer: function (event) {
+        $('body').toggleClass('nav-active')
+      },
+      onSwipeRight: function (event) {
         $('body').toggleClass('nav-active')
       }
     }

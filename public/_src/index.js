@@ -7,6 +7,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import series from 'async-series'
+import VueTouch from 'vue-touch'
 
 // USER FUNCTIONS
 import states from './_app/states.js'
@@ -29,7 +30,8 @@ Vue.component('nav-component', Nav)
 import landingData from './_data/landing.json'
 
 // VUE APP
-Vue.use(VueRouter);
+Vue.use(VueRouter)
+Vue.use(VueTouch)
 const App = Vue.extend()
 
 // ROUTER OPTIONS
