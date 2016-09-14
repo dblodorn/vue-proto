@@ -34,7 +34,7 @@
     @extend %box-shadow
     @extend %aligner
     width: 100%
-    position: absolute
+    position: fixed
     height: $header-height
     top: 0
     left: 0

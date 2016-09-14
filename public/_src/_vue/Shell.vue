@@ -1,9 +1,8 @@
 <template lang="jade">
-  #site
-    header-component
-    main
-      router-view
-    footer-component
+  header-component
+  main
+    router-view
+  footer-component
 </template>
 
 <script></script>
@@ -27,25 +26,22 @@
     height: 0
 
   main
-    position: absolute
+    position: relative
     width: 100%
+    min-height: calc(100% - $footer-height)
     top: 0%
     bottom: 0px
     display: block
-    background-color: #e1e2e2
-    margin-top: $header-height
-    margin-bottom: $footer-height
-    overflow: auto
     z-index: 15
 
   // KILL SCROLL
-  ::-webkit-scrollbar
-      display: none
-  ::-webkit-scrollbar-track
-      display: none
-  ::-webkit-scrollbar-thumb
-      display: none
-  ::-webkit-scrollbar-thumb:window-inactive
-      display: none
+  //::-webkit-scrollbar
+  //    display: none
+  //::-webkit-scrollbar-track
+  //    display: none
+  //::-webkit-scrollbar-thumb
+  //    display: none
+  //::-webkit-scrollbar-thumb:window-inactive
+  //    display: none
 
 </style>

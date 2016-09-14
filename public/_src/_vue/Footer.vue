@@ -39,8 +39,8 @@
     display: flex
     flex-direction: column
     flex-wrap: wrap
-    position: fixed
-    bottom: -$footer-content-height
+    position: relative
+    //bottom: -$footer-content-height
     left: 0
     width: 100%
     background-color: $green
