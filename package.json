@@ -16,6 +16,7 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.1.0",
     "lodash": "^3.10.1",
+    "pixi.js": "^4.0.1",
     "simplestatemanager": "^3.1.3",
     "smooth-scroll": "cferdinandi/smooth-scroll",
     "vue": "^1.0.0",

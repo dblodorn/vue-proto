@@ -16,6 +16,7 @@ import smoothScroll from 'smooth-scroll'
 import states from './_app/states.js'
 import utility from './_app/utilities.js'
 import browser from './_app/browser-detect.js'
+import bgVideo from "./_app/bg-video.js"
 
 // IMPORT COMPONENTS
 import Shell from './_vue/Shell.vue'

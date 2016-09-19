@@ -1,8 +1,7 @@
 <template lang="jade">
   seo-title(value="VUE-PROTO | Welcome")
   section#landing(v-bind:style="{ backgroundImage: 'url('+ landing.bgimg +')' }")
-    article
-      h1 {{ landing.header_one }}
+    #video-bg
   section#section2
     article
       h1 {{ landing.header_two }}
@@ -12,8 +11,10 @@
 </template>
 
 <script>
+  
   import $ from 'jquery'
   import utility from "../_app/utilities.js"
+  import bgVideo from "../_app/bg-video.js"
 
   export default {
     data () {
@@ -24,13 +25,12 @@
     route: {
       canReuse: false,
         activate: function() {
-        
         $('body').animate({ scrollTop: 0 }, 5);
-        
         utility.setId('body','landing')
-        
         var data = this.$route.data;
         this.$set('landing', data);
+        // VIDEO LOAD
+        bgVideo.init('imgs/fpo/vid-test.mp4','video-bg');
       }
     }
   }

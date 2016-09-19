@@ -8,7 +8,7 @@ const PATHS = {
 module.exports = {
   entry: {
     app: ['./public/_src/index.js'],
-    vendor: ["jquery", "hammerjs"]
+    vendor: ["jquery"]
   },
   output: {
     path: path.resolve(__dirname, './js'),
@@ -58,6 +58,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
   ],
+  externals: {
+    "pixi": "PIXI"
+  },
   devServer: {
     historyApiFallback: true,
     noInfo: true
