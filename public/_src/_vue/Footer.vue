@@ -40,7 +40,6 @@
     flex-direction: column
     flex-wrap: wrap
     position: relative
-    //bottom: -$footer-content-height
     left: 0
     width: 100%
     background-color: $green

@@ -34,14 +34,4 @@
     display: block
     z-index: 15
 
-  // KILL SCROLL
-  //::-webkit-scrollbar
-  //    display: none
-  //::-webkit-scrollbar-track
-  //    display: none
-  //::-webkit-scrollbar-thumb
-  //    display: none
-  //::-webkit-scrollbar-thumb:window-inactive
-  //    display: none
-
 </style>
