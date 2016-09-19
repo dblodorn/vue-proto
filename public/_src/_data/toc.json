@@ -1,14 +1,14 @@
 {
   "nav_items": [
     {
-      "title": "nav1",
-      "link": "/"
+      "title": "Landing",
+      "link": "#landing"
     },{
-      "title": "nav2",
-      "link": "/"
+      "title": "Section 2",
+      "link": "#section2"
     },{
-      "title": "nav3",
-      "link": "/"
+      "title": "Section 3",
+      "link": "#section3"
     }
   ]
 }

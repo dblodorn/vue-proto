@@ -1,7 +1,14 @@
 <template lang="jade">
+  seo-title(value="VUE-PROTO | Welcome")
   section#landing(v-bind:style="{ backgroundImage: 'url('+ landing.bgimg +')' }")
     article
       h1 {{ landing.header_one }}
+  section#section2
+    article
+      h1 {{ landing.header_two }}
+  section#section3
+    article
+      h1 {{ landing.header_three }}
 </template>
 
 <script>
@@ -35,7 +42,11 @@
 
   section#landing
     @extend %full-bg
+
+  section#landing,
+  section#section2,
+  section#section3
     padding-top: $header-height + 4rem
-    height: 200vh
+    height: 100vh
 
 </style>

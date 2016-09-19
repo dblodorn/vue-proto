@@ -1,5 +1,7 @@
 {
   "header_one": "Landing",
+  "header_two": "Section 2",
+  "header_three": "Section 3",
   "bgimg": "imgs/fpo/bg-swirl.jpg",
   "preload_images": [
     "imgs/fpo/bg-swirl.jpg"

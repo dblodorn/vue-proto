@@ -1,6 +1,6 @@
 <template lang="jade">
   header
-    .logo
+    button.logo(v-on:click="homeReset")
       img(v-bind:src="header_data.logo")
     nav-component
 </template>
@@ -8,6 +8,7 @@
 <script>
 
   import $ from 'jquery'
+  import smoothScroll from 'smooth-scroll'
   import headerData from '../_data/header.json'
 
   export default {
@@ -19,6 +20,13 @@
     ready: function(){
       var data = headerData;
       this.$set('header_data', data);
+    },
+    methods: {
+      homeReset: function (event) {
+        var anchor = document.querySelector('#landing')
+        $('body').removeClass('nav-active')
+        smoothScroll.animateScroll(anchor)
+      }
     }
   }
   
@@ -29,6 +37,10 @@
   @import "../_sass/utilities/_utilities.sass"
 
   // HEADER
+
+  body.past-header
+    header
+      background-color: $magenta
 
   header
     @extend %box-shadow
@@ -42,9 +54,13 @@
     z-index: $header-z
     padding: 0 $base-padding
     
-    .logo
+    button.logo
       margin-right: auto
       height: 2rem
+      background: none
+      border: 0
+      padding: 0
+      cursor: pointer
       img
         height: 100%
         width: auto

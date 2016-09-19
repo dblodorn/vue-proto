@@ -6,8 +6,11 @@ import $ from 'jquery'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-import series from 'async-series'
 import VueTouch from 'vue-touch'
+import VueSEO from 'vue-seo'
+import series from 'async-series'
+import AOS from 'aos'
+import smoothScroll from 'smooth-scroll'
 
 // USER FUNCTIONS
 import states from './_app/states.js'
@@ -31,7 +34,9 @@ import landingData from './_data/landing.json'
 
 // VUE APP
 Vue.use(VueRouter)
+Vue.use(VueSEO)
 Vue.use(VueTouch)
+
 const App = Vue.extend()
 
 // ROUTER OPTIONS
@@ -73,9 +78,28 @@ var initApp = function() {
       done()
     },
     function(done) {
+      AOS.init();
+      done()
+    },
+    function(done) {
+      smoothScroll.init({
+        selector: '[data-scroll]',
+        selectorHeader: null,
+        speed: 200,
+        easing: 'easeInOutCubic',
+        offset: 60,
+        callback: function ( anchor, toggle ) {}
+      });
+      done()
+    },
+    function(done) {
       setTimeout(function(){
         utility.preload(landingData.preload_images)
       }, 1000);
+      done()
+    },
+    function(done) {
+      utility.scrollCheck(50);
     }
   ], function(err) {
     console.log(err.message) // "another thing"

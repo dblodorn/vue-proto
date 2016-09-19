@@ -6,7 +6,7 @@
       img(v-bind:src="'imgs/ui/close-btn.svg'")
     ul
       li(v-for="navitem in toc.nav_items")
-        a {{ navitem.title }}
+        a(data-scroll :href="navitem.link" v-on:click="navdrawer") {{ navitem.title }}
 </template>
 
 <script>
@@ -59,6 +59,7 @@
       padding: 2rem
       li
         margin-left: 2rem
+        margin-bottom: 2rem
 
     .close-nav
       @extend %smooth
