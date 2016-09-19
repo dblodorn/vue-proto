@@ -2,6 +2,8 @@
 
 > A Vue.js rapid prototyping skeleton project with Vue-Router and Vue-Resource, using component architecture. Includes some helper functions, a small image preload script, Simple State Manager, and some other stuff.
 
+### [if you wanna peep it:](http://vue-proto.db13.us/)
+
 ## Build Setup
 
 ``` bash
