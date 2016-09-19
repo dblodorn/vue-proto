@@ -4,7 +4,8 @@
       .logo
         img(v-bind:src="footer_data.logo")
     .inner-footer
-      address {{ footer_data.address }}
+      address
+        h5 {{ footer_data.address }}
 </template>
 
 <script>
@@ -59,5 +60,9 @@
   .inner-footer
     @extend %aligner
     height: $footer-content-height
-     
+    address
+      font-style: normal
+      h5
+        color: $white
+         
 </style>

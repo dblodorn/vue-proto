@@ -48,5 +48,13 @@
   section#section3
     padding-top: $header-height + 4rem
     height: 100vh
+    *
+      color: $white
+
+  section#section2
+    background-color: $pink
+
+  section#section3
+    background-color: $orange
 
 </style>

@@ -1,6 +1,6 @@
 <template lang="jade">
   button.open-nav(v-on:click="navdrawer")
-    h5 MENU
+    h5 Menu
   nav(v-touch:swiperight="onSwipeRight")
     button.close-nav(v-on:click="navdrawer")
       img(v-bind:src="'imgs/ui/close-btn.svg'")
@@ -39,6 +39,11 @@
 <style lang="sass?indentedSyntax" scoped>
 
   @import "../_sass/utilities/_utilities.sass"
+
+  html.mobile
+    nav
+      width: 100%
+      right: -102%
 
   // NAV DRAWER
   nav
